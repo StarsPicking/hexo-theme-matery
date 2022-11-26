@@ -6,7 +6,7 @@
 title: 张大哥Blog
 subtitle: '张大哥Blog'
 description: '技术领域的创作者'
-keywords: [python, linux, mysql, nginx, CICD, jenkins, docker, k8s ]
+keywords: [python, linux, mysql, nginx, CICD, jenkins, docker, devops, redis, 微服务]
 author: 张大哥
 language: zh-CN
 timezone: 'Asia/Shanghai'

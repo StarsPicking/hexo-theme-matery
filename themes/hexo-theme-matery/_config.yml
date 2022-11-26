@@ -23,9 +23,9 @@ menu:
     url: /friends
     icon: fas fa-address-book
   # 二级菜单写法如下
-  #Medias:
-  #  icon: fas fa-list
-  #  children:
+  Medias:
+    icon: fas fa-list
+    children:
   #    - name: Musics
   #      url: /musics
   #      icon: fas fa-music
@@ -35,9 +35,9 @@ menu:
   #    - name: Books
   #      url: /books
   #      icon: fas fa-book
-  #    - name: Galleries
-  #      url: /galleries
-  #      icon: fas fa-image
+      - name: Galleries
+        url: /galleries
+        icon: fas fa-image
 
 # Website start time.
 # 站点运行开始时间.
@@ -152,15 +152,16 @@ logo: /medias/logo.png
 # 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.
 indexbtn:
   enable: true
-  name: Github
-  icon: fab fa-github-alt
-  url: https://github.com/blinkfox/hexo-theme-matery
+  name: Gitee
+  icon: fa-brands fa-gitlab
+  url: https://gitee.com/better_better
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github:  
+  github: 
+  git: https://gitee.com/better_better
   email: 15652533044@163.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
@@ -407,8 +408,8 @@ changyan:
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
-  enable: false
-  url: https://github.com/blinkfox/hexo-theme-matery
+  enable: true
+  url: https://gitee.com/better_better/hexo-theme-matery
   title: Fork Me
 
 # The configuration of the Twikoo comment module is not activated by default.
