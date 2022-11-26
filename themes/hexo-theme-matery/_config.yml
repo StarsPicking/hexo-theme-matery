@@ -525,6 +525,7 @@ libs:
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
+- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover1.jpg
 - /medias/featureimages/0.jpg
 - /medias/featureimages/1.jpg
 - /medias/featureimages/2.jpg
@@ -549,6 +550,46 @@ featureImages:
 - /medias/featureimages/21.jpg
 - /medias/featureimages/22.jpg
 - /medias/featureimages/23.jpg
+
+# 注释的图为高清大图，建议只在轮播图里使用
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover2.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover3.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover4.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover5.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover6.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover7.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover8.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover9.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover10.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover11.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover12.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover13.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover14.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover15.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover16.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover17.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover18.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover19.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover20.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover21.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover22.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover23.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover24.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover25.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover26.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover27.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover28.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover29.jpg 
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover30.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover31.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover32.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover33.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover34.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover35.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover36.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover37.jpg
+  #- https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover38.jpg
+
 
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
@@ -589,7 +630,7 @@ tuxiaochao:
   productId:
 #背景canvas-nest
 canvas_nest:
-  enable: false
+  enable: true
   color: 0,0,255 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
   pointColor: 0,0,255 # 交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
   opacity: 0.7 # 线条透明度（0~1）, 默认: 0.5
