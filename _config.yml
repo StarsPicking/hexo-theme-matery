@@ -156,7 +156,7 @@ feed:
 
 # 图片懒加载
 lazyload:
-  enable: false 
+  enable: true
   onlypost: true  # 是否只对文章的图片做懒加载
   loadingImg: /medias/loading.gif #eg ./images/loading.gif
   #isSPA: true
@@ -194,3 +194,23 @@ live2d:
     opacityDefault: 0.7
     opacityOnHover: 0.8
 
+
+#hexo-neat 优化提速插件（去掉HTML、css、js的blank字符）
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+    - '**/*.md'
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/**/instantpage.js'
+    - '**/matery.js'
