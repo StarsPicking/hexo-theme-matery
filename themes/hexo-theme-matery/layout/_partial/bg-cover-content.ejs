@@ -36,11 +36,18 @@
 </div>
 
 <% if (theme.banner.enable) { %>
+
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    //var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
+    //$('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    // 随机选择配置文件中featureImages配置的图片
+    //$('.bg-cover').css('background-image', 'url(<%- theme.featureImages[Math.floor(Math.random() * theme.featureImages.length + 1)-1] %>)');
+    //固定一张图片
+    $('.bg-cover').css('background-image', 'url(https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover3.jpg)');
+
 </script>
+
 <% } else { %>
 <script>
     $('.bg-cover').css('background-image', 'url(<%- theme.jsDelivr.url %><%- url_for('/medias/banner/0.jpg') %>)');
