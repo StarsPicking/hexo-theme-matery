@@ -44,9 +44,9 @@ menu:
       - name: 音乐
         url: /musics
         icon: fas fa-music
-  #    - name: Movies
-  #      url: /movies
-  #      icon: fas fa-film
+      - name: 电影
+        url: /movies
+        icon: fas fa-film
   Friends:
     url: /friends
     icon: fas fa-address-book
