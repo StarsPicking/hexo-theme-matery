@@ -1,0 +1,24 @@
+[
+{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/leetcode.jpeg",
+    "name": "力扣",
+	"type": "编程/刷题",
+	"introduction": "代码能力提升平台体验刷题的乐趣",
+    "url": "https://leetcode.cn/",
+    "title": "进入网站"
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/github.jpeg",
+    "name": "Github",
+    "type": "开源社区/代码托管",
+	"introduction": "丰富的资源收集与强力的代码托管平台",
+    "url": "https://github.com/",
+    "title": "进入网站"    
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/bilibili.jpeg",
+    "name": "B站",
+	"type": "学习/影音",
+	"introduction": "免费视频学习资源，二次元天堂",
+    "url": "https://www.bilibili.com/",
+    "title": "进入网站"
+}
+]

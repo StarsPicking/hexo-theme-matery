@@ -4,25 +4,34 @@ menu:
   Index:
     url: /
     icon: fas fa-home
-  Tags:
-    url: /tags
-    icon: fas fa-tags
-  Categories:
-    url: /categories
-    icon: fas fa-bookmark
+  # Tags:
+  #   url: /tags
+  #   icon: fas fa-tags
+  # Categories:
+  #   url: /categories
+  #   icon: fas fa-bookmark
+  博客:
+    icon: fa-solid fa-blog
+    children:
+      - name: 分类
+        url: /categories
+        icon: fas fa-bookmark
+      - name: 标签
+        url: /tags
+        icon: fas fa-tags
   Archives:
     url: /archives
     icon: fas fa-archive
   About:
     url: /about
     icon: fas fa-user-circle
+  资源:
+    url: /resources
+    icon: fa-solid fa-toolbox
+
   #Contact:
   #  url: /contact
   #  icon: fas fa-comments
-  Friends:
-    url: /friends
-    icon: fas fa-address-book
-  # 二级菜单写法如下
   媒体:
     icon: fas fa-list
     children:
@@ -38,6 +47,9 @@ menu:
   #    - name: Movies
   #      url: /movies
   #      icon: fas fa-film
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
 
 
 
