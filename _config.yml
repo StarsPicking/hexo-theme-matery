@@ -157,9 +157,10 @@ feed:
 # 图片懒加载
 lazyload:
   enable: true
-  onlypost: true  # 是否只对文章的图片做懒加载
+  onlypost: false  # 是否只对文章的图片做懒加载
   loadingImg: /medias/loading.gif #eg ./images/loading.gif
-  #isSPA: true
+  isSPA: false
+  preloadRatio: 4
 
 
 live2d:
@@ -214,3 +215,5 @@ neat_js:
     - '**/*.min.js'
     - '**/**/instantpage.js'
     - '**/matery.js'
+
+

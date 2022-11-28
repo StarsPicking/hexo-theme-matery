@@ -1,4 +1,4 @@
-<div class="dream">
+<!-- <div class="dream">
     <% if (theme.dream.showTitle) { %>
     <div class="title center-align">
         <i class="far fa-lightbulb"></i>&nbsp;&nbsp;<%= theme.dream.title %>
@@ -9,4 +9,43 @@
             <%= theme.dream.text %>
         </div>
     </div>
+</div> -->
+
+<script>
+    fetch('https://v1.hitokoto.cn?c=d&c=h&c=j')
+      .then(function (res){
+        return res.json();
+      })
+      .then(function (data) {
+        var info = document.getElementById('info');
+        var poem = document.getElementById('poem');
+        poem.innerText = data.hitokoto;
+        if (data.from_who==null){
+            info.innerText = "《" + data.from + "》" 
+        }
+        else{
+            info.innerText = "--" + data.from_who + "《" + data.from + "》" 
+        }
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+  </script>
+  
+  <!-- 加入网易云音乐热门评论，实时更新 -->
+<div class="poem-wrap">
+    <% if (theme.dream.showTitle){ %>
+    <div class="poem-border poem-left">
+
+    </div>
+    <div class="poem-border poem-right">
+
+    </div>
+    <h1><%= theme.dream.title %></h1>
+    <% } %>
+    <p id="poem">loading...</p>
+    <p id="info">loading...</p>
+    <!-- <p id="hitokoto">正在加载一言...</p> -->
 </div>
+  
+  

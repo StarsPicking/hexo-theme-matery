@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.gallery) %>">
-
-<link type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.fancybox) %>" rel="stylesheet">
-<link type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.justifiedGallery) %>" rel="stylesheet">
+<link rel="stylesheet" href="/css/gallery.css">
+<link type="text/css" href="/libs/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link type="text/css" href="/libs/justifiedGallery/justifiedGallery.min.css" rel="stylesheet">
 
 <%- partial('_partial/post-cover') %>
 <%
@@ -20,22 +19,62 @@ function getCurrentGallery(galleries, pageTitle) {
 var currentGallery = getCurrentGallery(galleries, pageTitle)
 
 var photos = currentGallery.photos;
-var galleryImageStr = theme.jsDelivr.url ? theme.jsDelivr.url : '';
 
 let imageStr = ''
 
 for (var i = 0, len = photos.length; i < len; i++) {
     var photo = photos[i];
 
-    imageStr += "<a href=\"" + galleryImageStr + photo + "\"" +
+     imageStr += "<a href=\"https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/photo/" + photo + "\"" +
             "     class=\"photo-item\" rel=\"example_group\"" +
             "     data-fancybox=\"images\">" +
-            "      <img src=\"" + galleryImageStr + photo + "\"" +
+            "      <img src=\"https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/photo/" + photo + "\"" +
             "       alt=" + photo + ">\n" +
             "    </a>"
 
 }
-%>  
+%>
+
+
+
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+    fetch('https://v1.hitokoto.cn?c=d&c=h&c=j')
+      .then(function (res){
+        return res.json();
+      })
+      .then(function (data) {
+        var info = document.getElementById('info');
+        var poem = document.getElementById('poem');
+        poem.innerText = data.hitokoto;
+        if (data.from_who==null){
+            info.innerText = "《" + data.from + "》" 
+        }
+        else{
+            info.innerText = "--" + data.from_who + "《" + data.from + "》" 
+        }
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+  </script>
+
+<!-- 加入网易云音乐热门评论，实时更新 -->
+<div class="poem-wrap">
+    <div class="poem-border poem-left">
+    </div>
+    <div class="poem-border poem-right">
+    </div>
+    <h1>时光机</h1>
+    <p id="poem">loading...</p>
+    <p id="info">loading...</p>
+    <!-- <p id="hitokoto">正在加载一言...</p> -->
+</div>
 
 <div class="container">
     <div class="photo-wrapper">
@@ -62,11 +101,11 @@ for (var i = 0, len = photos.length; i < len; i++) {
     </div>
 </div>
 
-<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.fancybox) %>"></script>
-<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.justifiedGallery) %>"></script>
+<script src="/libs/fancybox/fancybox.js"></script>
+<script src="/libs/justifiedGallery/justifiedGallery.min.js"></script>
 <script>
 
-    $("a[rel=example_group]").fancybox();
-    $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
+  $("a[rel=example_group]").fancybox();
+  $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
 
 </script>

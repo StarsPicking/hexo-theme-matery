@@ -1,6 +1,47 @@
-<link rel="stylesheet" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.gallery) %>">
+<link rel="stylesheet" href="/css/gallery.css">
 
 <%- partial('_partial/bg-cover') %>
+
+
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+    fetch('https://v1.hitokoto.cn?c=d&c=h&c=j')
+      .then(function (res){
+        return res.json();
+      })
+      .then(function (data) {
+        var info = document.getElementById('info');
+        var poem = document.getElementById('poem');
+        poem.innerText = data.hitokoto;
+        if (data.from_who==null){
+            info.innerText = "《" + data.from + "》" 
+        }
+        else{
+            info.innerText = "--" + data.from_who + "《" + data.from + "》" 
+        }
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+  </script>
+
+<!-- 加入网易云音乐热门评论，实时更新 -->
+<div class="poem-wrap">
+    <div class="poem-border poem-left">
+    </div>
+    <div class="poem-border poem-right">
+    </div>
+    <h1>时光机</h1>
+    <p id="poem">loading...</p>
+    <p id="info">loading...</p>
+    <!-- <p id="hitokoto">正在加载一言...</p> -->
+</div>
+
 
 <main class="content">
     <div class="container">
@@ -11,7 +52,7 @@
             <% var gallery = galleries[i]; %>
             <div class="col s6 m4 l4 xl3 gallery-box">
                 <a href="./<%- gallery.name %>" class="gallery-item" data-aos="zoom-in-up">
-                     <div class="gallery-cover-box" style="background-image: url(<%- theme.jsDelivr.url %><%- gallery.cover%>);">
+                     <div class="gallery-cover-box" style="background-image: url(https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/cover/<%- gallery.cover%>);">
                     </div>
                     <p class="gallery-name">
                         <%- gallery.name %>
@@ -23,3 +64,4 @@
         <% } %>
     </div>
 </main>
+

@@ -36,7 +36,8 @@
 
                 <% if (page.author && page.author.length > 0) { %>
                 <div class="post-date info-break-policy">
-                    <i class="far fa-regular fa-user"></i><%- page.author %>:&nbsp;&nbsp;
+                    <i class="fa-solid fa-user-pen"></i><%- __('author') %>:&nbsp;&nbsp;
+		    <%- page.author %>
                 </div>
                 <% } %>
 

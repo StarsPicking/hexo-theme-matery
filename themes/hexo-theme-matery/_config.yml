@@ -23,21 +23,23 @@ menu:
     url: /friends
     icon: fas fa-address-book
   # 二级菜单写法如下
-  Medias:
+  媒体:
     icon: fas fa-list
     children:
-  #    - name: Musics
-  #      url: /musics
-  #      icon: fas fa-music
+      - name: 相册
+        url: /galleries
+        icon: fas fa-image
+      - name: 书籍
+        url: /books
+        icon: fas fa-book
+      - name: 音乐
+        url: /musics
+        icon: fas fa-music
   #    - name: Movies
   #      url: /movies
   #      icon: fas fa-film
-  #    - name: Books
-  #      url: /books
-  #      icon: fas fa-book
-      - name: Galleries
-        url: /galleries
-        icon: fas fa-image
+
+
 
 # Website start time.
 # 站点运行开始时间.
@@ -57,7 +59,7 @@ cover:
   showIndicators: true # 是否显示指示器. # Whether to display the indicators
   autoLoop: true # 是否自动轮播. Whether it is automatically rotated.
   duration: 120 # 切换延迟时间. Switching delay time.
-  intervalTime: 5000 # 自动切换下一张的间隔时间. Automatically switch the interval of the next one.
+  intervalTime: 10000 # 自动切换下一张的间隔时间. Automatically switch the interval of the next one.
   useConfig: false # 是否使用配置文件, 在 _data/covers.json 下配置推荐文章, false则使用主题在文章中的配置 cover coverImg
   # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/covers.json 移动到 my-blog/source/_data/下修改配置即可
   video:
@@ -73,7 +75,7 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 我的梦想
+  title: 摘录
   text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
 
 # Whether to display the musics.
@@ -84,9 +86,9 @@ music:
     enable: true
     show: 听听音乐
   autoHide: true    # hide automaticaly
-  server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
-  id: 503838841     #require	song id / playlist id / album id / search keyword
+  server: netease   #require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    # require song, playlist, album, search, artist
+  id: 7548962547    # require song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式
   autoplay: false   # 是否自动播放
   theme: '#42b983'
@@ -100,20 +102,20 @@ music:
 # Whether to display the musics.
 # 单独的音乐页面.
 musics:
-  enable: false
+  enable: true
   title:          #非吸底模式有效
-    enable: true
-    show: 听听音乐
-  server: tencent   #require music platform: netease, tencent, kugou, xiami, baidu
+    enable: false
+    show: 我的音乐
+  server: netease   #require music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 1776127550     #require song id / playlist id / album id / search keyword
+  id: 7548962547     #require song id / playlist id / album id / search keyword
   fixed: false      # 开启吸底模式
-  autoplay: true   # 是否自动播放
-  theme: '#42b983'
+  autoplay: true     # 是否自动播放
+  theme: '#C71585'
   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
-  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  volume: 0.5       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: false  # 列表默认折叠
   listMaxHeight: "525px" #列表最大高度
 
@@ -177,7 +179,7 @@ socialLink:
 toc:
   enable: true
   heading: h1, h2, h3, h4
-  collapseDepth: 2 # 目录默认展开层级
+  collapseDepth: 3 # 目录默认展开层级
   showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
 
 # 代码块相关
@@ -310,7 +312,7 @@ mySkills:
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: true
+  enable: false
   data:
     - /medias/featureimages/0.jpg
     - /medias/featureimages/1.jpg
@@ -429,7 +431,7 @@ twikoo:
 # 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和加密后的密文即可.
 # 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
 verifyPassword:
-  enable: false
+  enable: True
   promptMessage: 请输入访问本文章的密码
   errorMessage: 密码错误，将返回主页！
 
@@ -672,8 +674,6 @@ subtitle:
   backSpeed: 50 # 删除速度
   sub:
     - 见过花就好，又何必在乎花属于谁。你记得花，花就不会枯萎
-    - It's good to have seen flowers. Why do you care who they belong to. If you remember flowers, they will not wither
-
 # 手机二级菜单.
 navMenu:
   mleft: false # 二级侧栏子菜单是否对齐左边

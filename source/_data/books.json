@@ -1,0 +1,84 @@
+[
+    {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s34144077.jpg",
+    "name": "深入理解分布式系统",
+	"type": "科技/互联网",
+	"recommendation": "★★★★",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/35794814/",
+    "title": "了解书籍"
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s29434304.jpg",
+    "name": "流畅的Python",
+    "type": "互联网/编程",
+	"recommendation": "★★★★",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/27028517/",
+    "title": "了解书籍"    
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s33964410.jpg",
+    "name": "Go语言底层原理剖析",
+	"type": "互联网/编程",
+	"recommendation": "★★★★★",
+	"process": "已看完(2020/9/22)",
+    "url": "https://book.douban.com/subject/35556889/",
+    "title": "了解书籍"
+},
+{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s1727290.jpg",
+    "name": "追风筝的人",
+	"type": "[美] 卡勒德·胡赛尼",
+	"recommendation": "为你,千千万万遍",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/1770782/",
+    "title": "了解书籍"
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s33834057.jpg",
+    "name": "文城",
+    "type": "[中] 余华",
+	"recommendation": "总会有一个地方叫文城",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/35335514/?source=2021_annual_book",
+    "title": "了解书籍"    
+}, {
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s33792562.jpg",
+    "name": "下沉年代",
+    "type": "[美] 乔治·帕克",
+	"recommendation": "一部定义我们时代的史诗",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/35230281/",
+    "title": "了解书籍"    
+},{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s27237850.jpg",
+    "name": "百年孤独",
+    "type": "[哥伦比亚] 加西亚·马尔克斯",
+	"recommendation": "魔幻现实主义文学代表作",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/6082808/",
+    "title": "了解书籍"    
+},{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s33821754.jpg",
+    "name": "克拉拉与太阳",
+	"type": "[英] 石黑一雄",
+	"recommendation": "太阳总有办法照到我们，不管我们在哪里",
+	"process": "已看完(2020/9/22)",
+    "url": "https://book.douban.com/subject/35315153/?source=2021_annual_book",
+    "title": "了解书籍"
+},{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s2659208.jpg",
+    "name": "月亮和六便士",
+	"type": "[英] 毛姆",
+	"recommendation": "有多少人会经历顿悟，就有更少的人甘愿自我放逐",
+	"process": "已看完(2020/9/22)",
+    "url": "https://book.douban.com/subject/1858513/",
+    "title": "了解书籍"
+},{
+    "avatar": "https://zhangtq-gallery.oss-cn-hangzhou.aliyuncs.com/fenmian/s1103152.jpg",
+    "name": "小王子",
+	"type": "[法] 圣埃克苏佩里",
+	"recommendation": "献给长成了大人的孩子们",
+	"process": "在看ing",
+    "url": "https://book.douban.com/subject/1084336/",
+    "title": "了解书籍"
+}
+]

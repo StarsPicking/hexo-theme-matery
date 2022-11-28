@@ -1,0 +1,82 @@
+[
+    {
+      "name": "美图",
+      "cover": "cover1.jpg",
+      "description": "相册缩略图-蓝碎片",
+      "photos": [
+        "photo1.jpeg",
+        "photo2.jpeg" 
+      ]
+    },
+    {
+      "name": "故宫",
+      "cover": "cover2.jpg",
+      "description": "相册缩略图-静享时光",
+      "photos": [
+        "g1.jpg",
+        "g2.jpg",
+        "g3.jpg",
+        "g4.jpg",
+        "g5.jpg"
+      ]
+    },
+    {
+      "name": "海景",
+      "cover": "cover7.jpg",
+      "description": "相册缩略图-鲸",
+      "photos": [
+        "sea1.jpg",
+        "sea2.jpg",
+        "sea3.jpg",
+        "sea4.jpeg",
+        "sea5.jpg",
+        "sea6.jpg",
+        "sea7.jpg",
+        "sea8.jpg",
+        "sea9.jpg",
+        "sea10.jpg",
+        "sea11.jpg",
+        "sea12.jpeg"
+      ]      
+    },
+    {
+      "name": "旅行",
+      "cover": "cover3.jpg",
+      "description": "相册缩略图-在路上",
+      "photos": [
+
+      ]      
+    },
+    {
+      "name": "素材",
+      "cover": "cover5.jpg",
+      "description": "相册缩略图-大理石",
+      "photos": [
+
+      ]      
+    },
+    {
+      "name": "生活",
+      "cover": "cover11.jpeg",
+      "description": "相册缩略图-生活",
+      "photos": [
+
+      ]      
+    },
+    {
+      "name": "工作",
+      "cover": "cover6.jpg",
+      "description": "相册缩略图-在路上",
+      "photos": [
+
+      ]      
+    },
+    {
+      "name": "个人",
+      "cover": "cover9.jpg",
+      "description": "相册缩略图-拾光",
+      "photos": [
+
+      ]      
+    }
+  ]
