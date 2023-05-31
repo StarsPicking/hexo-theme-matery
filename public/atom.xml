@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>张大哥Blog</title>
+  
+  <subtitle>张大哥Blog</subtitle>
+  <link href="http://zhangtq.tpddns.cn:81/atom.xml" rel="self"/>
+  
+  <link href="http://zhangtq.tpddns.cn:81/"/>
+  <updated>2022-12-01T09:26:13.660Z</updated>
+  <id>http://zhangtq.tpddns.cn:81/</id>
+  
+  <author>
+    <name>张大哥</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-matery魔改</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/27595.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/27595.html</id>
+    <published>2022-11-25T17:13:25.000Z</published>
+    <updated>2022-12-01T09:26:13.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;魔改&quot;&gt;&lt;a href=&quot;#魔改&quot; class=&quot;headerlink&quot; title=&quot;魔改&quot;&gt;&lt;/a&gt;魔改&lt;/h1&gt;&lt;h2 id=&quot;修改网站整体配色&quot;&gt;&lt;a href=&quot;#修改网站整体配色&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="http://zhangtq.tpddns.cn:81/categories/hexo/"/>
+    
+    
+    <category term="hexo-theme-matery" scheme="http://zhangtq.tpddns.cn:81/tags/hexo-theme-matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode算法题II</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/45160.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/45160.html</id>
+    <published>2022-11-24T15:59:21.000Z</published>
+    <updated>2023-01-11T11:58:00.965Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://zhangtq.tpddns.cn:81/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法题" scheme="http://zhangtq.tpddns.cn:81/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    <category term="leetcode" scheme="http://zhangtq.tpddns.cn:81/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http协议</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/20687.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/20687.html</id>
+    <published>2022-11-15T15:42:11.000Z</published>
+    <updated>2022-11-26T12:20:38.789Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;http必知必会&quot;&gt;&lt;a href=&quot;#http必知必会&quot; class=&quot;headerlink&quot; title=&quot;http必知必会&quot;&gt;&lt;/a&gt;http必知必会&lt;/h1&gt;&lt;h1 id=&quot;http-请求方式&quot;&gt;&lt;a href=&quot;#http-请求方式&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络通信" scheme="http://zhangtq.tpddns.cn:81/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+    <category term="http协议" scheme="http://zhangtq.tpddns.cn:81/tags/http%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio微服务</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/50921.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/50921.html</id>
+    <published>2022-11-15T15:19:42.000Z</published>
+    <updated>2022-11-24T17:01:02.386Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;istio能做什么&quot;&gt;&lt;a href=&quot;#istio能做什么&quot; class=&quot;headerlink&quot; title=&quot;istio能做什么&quot;&gt;&lt;/a&gt;istio能做什么&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;连接： 智能控制服务之间的调用流量，</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="http://zhangtq.tpddns.cn:81/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="http://zhangtq.tpddns.cn:81/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio实现金丝雀发布</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/51490.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/51490.html</id>
+    <published>2022-11-12T08:23:34.000Z</published>
+    <updated>2022-11-24T17:01:02.385Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-istio实现灰度发布&quot;&gt;&lt;a href=&quot;#1-istio实现灰度发布&quot; class=&quot;headerlink&quot; title=&quot;1 istio实现灰度发布&quot;&gt;&lt;/a&gt;1 istio实现灰度发布&lt;/h1&gt;&lt;h2 id=&quot;1-1-什么是灰度发布&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="http://zhangtq.tpddns.cn:81/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="http://zhangtq.tpddns.cn:81/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio部署微服务</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/22626.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/22626.html</id>
+    <published>2022-11-12T03:24:37.000Z</published>
+    <updated>2022-11-24T17:01:02.386Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;istio部署微服务&quot;&gt;&lt;a href=&quot;#istio部署微服务&quot; class=&quot;headerlink&quot; title=&quot;istio部署微服务&quot;&gt;&lt;/a&gt;istio部署微服务&lt;/h1&gt;&lt;h2 id=&quot;项目介绍&quot;&gt;&lt;a href=&quot;#项目介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="http://zhangtq.tpddns.cn:81/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="http://zhangtq.tpddns.cn:81/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微服务架构</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/19213.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/19213.html</id>
+    <published>2022-11-02T11:11:07.000Z</published>
+    <updated>2022-11-26T12:17:42.447Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;微服务架构介绍&quot;&gt;&lt;a href=&quot;#微服务架构介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="http://zhangtq.tpddns.cn:81/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="微服务" scheme="http://zhangtq.tpddns.cn:81/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/44296.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/44296.html</id>
+    <published>2022-11-02T09:59:01.000Z</published>
+    <updated>2022-11-26T06:17:51.384Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;reids-基础&quot;&gt;&lt;a href=&quot;#reids-基础&quot; class=&quot;headerlink&quot; title=&quot;reids 基础&quot;&gt;&lt;/a&gt;reids</summary>
+        
+      
+    
+    
+    
+    <category term="redis" scheme="http://zhangtq.tpddns.cn:81/categories/redis/"/>
+    
+    
+    <category term="redis" scheme="http://zhangtq.tpddns.cn:81/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode算法题I</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/46634.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/46634.html</id>
+    <published>2022-11-01T16:54:49.000Z</published>
+    <updated>2022-11-27T11:48:08.453Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;常见算法题&quot;&gt;&lt;a href=&quot;#常见算法题&quot; class=&quot;headerlink&quot; title=&quot;常见算法题&quot;&gt;&lt;/a&gt;常见算法题&lt;/h1&gt;&lt;h2 id=&quot;求两数之和&quot;&gt;&lt;a href=&quot;#求两数之和&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://zhangtq.tpddns.cn:81/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法题" scheme="http://zhangtq.tpddns.cn:81/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    <category term="leetcode" scheme="http://zhangtq.tpddns.cn:81/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序算法与二分查找</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/17141.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/17141.html</id>
+    <published>2022-11-01T13:08:46.000Z</published>
+    <updated>2022-11-26T06:14:12.168Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;排序算法&quot;&gt;&lt;a href=&quot;#排序算法&quot; class=&quot;headerlink&quot; title=&quot;排序算法&quot;&gt;&lt;/a&gt;排序算法&lt;/h1&gt;&lt;h2 id=&quot;冒泡&quot;&gt;&lt;a href=&quot;#冒泡&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://zhangtq.tpddns.cn:81/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="http://zhangtq.tpddns.cn:81/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="算法" scheme="http://zhangtq.tpddns.cn:81/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/46563.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/46563.html</id>
+    <published>2022-10-31T15:12:37.000Z</published>
+    <updated>2023-03-16T01:58:28.975Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;正则表达式是匹配类符号&lt;/li&gt;
+&lt;li&gt;正则表达式是一种可以让一些复杂字符串问题变得简单的工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://zhangtq.tpddns.cn:81/categories/python/"/>
+    
+    
+    <category term="正则表达式" scheme="http://zhangtq.tpddns.cn:81/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go基础</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/65207.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/65207.html</id>
+    <published>2022-10-29T05:07:40.000Z</published>
+    <updated>2023-05-31T15:08:03.212Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;go语言安装和介绍&quot;&gt;&lt;a href=&quot;#go语言安装和介绍&quot; class=&quot;headerlink&quot; title=&quot;go语言安装和介绍&quot;&gt;&lt;/a&gt;go语言安装和介绍&lt;/h1&gt;&lt;h2 id=&quot;go语言介绍&quot;&gt;&lt;a href=&quot;#go语言介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://zhangtq.tpddns.cn:81/categories/Go/"/>
+    
+    
+    <category term="go基础" scheme="http://zhangtq.tpddns.cn:81/tags/go%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-正则表达式</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/2149.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/2149.html</id>
+    <published>2022-10-28T15:54:23.000Z</published>
+    <updated>2022-11-28T07:34:22.365Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;groovy-正则表达式&quot;&gt;&lt;a href=&quot;#groovy-正则表达式&quot; class=&quot;headerlink&quot; title=&quot;groovy 正则表达式&quot;&gt;&lt;/a&gt;groovy 正则表达式&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;添加解析器</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-函数</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/29915.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/29915.html</id>
+    <published>2022-10-28T15:54:04.000Z</published>
+    <updated>2022-11-24T17:01:02.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;groovy-函数&quot;&gt;&lt;a href=&quot;#groovy-函数&quot; class=&quot;headerlink&quot; title=&quot;groovy 函数&quot;&gt;&lt;/a&gt;groovy 函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;def 定义函数&lt;/li&gt;
+&lt;li&gt;语法&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-list</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/42286.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/42286.html</id>
+    <published>2022-10-28T15:53:55.000Z</published>
+    <updated>2022-11-24T17:01:02.382Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;groovy数据类型-list&quot;&gt;&lt;a href=&quot;#groovy数据类型-list&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-string</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/50895.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/50895.html</id>
+    <published>2022-10-28T15:53:39.000Z</published>
+    <updated>2022-11-24T17:01:02.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;groovy数据类型-String&quot;&gt;&lt;a href=&quot;#groovy数据类型-String&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy安装</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/20877.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/20877.html</id>
+    <published>2022-10-28T15:53:12.000Z</published>
+    <updated>2022-11-24T17:01:02.382Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;groovy安装&quot;&gt;&lt;a href=&quot;#groovy安装&quot; class=&quot;headerlink&quot; title=&quot;groovy安装&quot;&gt;&lt;/a&gt;groovy安装&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;wget &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="http://zhangtq.tpddns.cn:81/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>保留字指令</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/11266.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/11266.html</id>
+    <published>2022-10-28T09:34:11.000Z</published>
+    <updated>2022-11-24T17:01:02.377Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;保留字指令&quot;&gt;&lt;a href=&quot;#保留字指令&quot; class=&quot;headerlink&quot; title=&quot;保留字指令&quot;&gt;&lt;/a&gt;保留字指令&lt;/h1&gt;&lt;p&gt;FROM 基于哪个镜像编写&lt;/p&gt;
+&lt;p&gt;MAINTAINER 镜像维护者的姓名和邮箱地址&lt;/p&gt;
+&lt;p&gt;RUN</summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="http://zhangtq.tpddns.cn:81/categories/docker/"/>
+    
+    
+    <category term="docker" scheme="http://zhangtq.tpddns.cn:81/tags/docker/"/>
+    
+    <category term="dockerfile" scheme="http://zhangtq.tpddns.cn:81/tags/dockerfile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过dockerfile构建镜像和挂载数据卷</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/50637.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/50637.html</id>
+    <published>2022-10-28T08:23:33.000Z</published>
+    <updated>2022-11-24T17:01:02.376Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;docker镜像的定义&quot;&gt;&lt;a href=&quot;#docker镜像的定义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="http://zhangtq.tpddns.cn:81/categories/docker/"/>
+    
+    
+    <category term="docker" scheme="http://zhangtq.tpddns.cn:81/tags/docker/"/>
+    
+    <category term="dockerfile" scheme="http://zhangtq.tpddns.cn:81/tags/dockerfile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构与算法</title>
+    <link href="http://zhangtq.tpddns.cn:81/posts/54150.html"/>
+    <id>http://zhangtq.tpddns.cn:81/posts/54150.html</id>
+    <published>2022-10-24T12:23:01.000Z</published>
+    <updated>2022-11-30T12:04:15.814Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据结构&quot;&gt;&lt;a href=&quot;#数据结构&quot; class=&quot;headerlink&quot; title=&quot;数据结构&quot;&gt;&lt;/a&gt;数据结构&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;数据结构的定义： 数据在计算机中的存储方式， 比如列表，数组，元组，字符串等，程序&amp;#x3D;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://zhangtq.tpddns.cn:81/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="http://zhangtq.tpddns.cn:81/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="算法" scheme="http://zhangtq.tpddns.cn:81/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+</feed>
