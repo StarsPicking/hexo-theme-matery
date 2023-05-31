@@ -10,8 +10,8 @@ tags:
   - http协议
 abbrlink: 20687
 date: 2022-11-15 23:42:11
-img:
-coverImg:
+img: https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover8.jpg
+coverImg: https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover8.jpg
 summary:
 ---
 

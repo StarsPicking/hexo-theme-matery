@@ -2,7 +2,7 @@
 tle: Nexus制品上传-jenkins
 author: 张大哥
 top: false
-cover: true
+cover: false
 toc: true
 mathjax: false
 categories: Devops
@@ -16,8 +16,9 @@ coverImg:
 summary:
 ---
 
-
 ## Nexus制品上传
+
+
 
 ## Nexus 的作用
 

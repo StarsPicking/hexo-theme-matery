@@ -2,7 +2,7 @@
 title: 基于jira的流水线实践
 author: 张大哥
 top: true
-cover: true
+cover: false
 toc: true
 mathjax: false
 categories: Devops
@@ -87,7 +87,7 @@ jenkins 端规划
   - Kubernetes中创建三个NS，用于模拟不同的集群。
   
     ```shell
-  cd k8s
+    cd k8s
     kubectl create -f ns.yaml
     ```
   ```

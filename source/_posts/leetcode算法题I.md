@@ -1,8 +1,8 @@
 ---
 title: leetcode算法题I
 author: 张大哥
-top: false
-cover: false
+top: true
+cover: true
 toc: true
 mathjax: false
 categories: 数据结构与算法
@@ -11,9 +11,9 @@ tags:
   - leetcode
 abbrlink: 46634
 date: 2022-11-02 00:54:49
-img:
-coverImg:
-summary:
+img: https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover6.jpg
+coverImg: https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover6.jpg
+summary: 数据结构算法不仅有用,更应该是每个程序员必须掌握的基本功 学习数据结构算法,可以大大拓宽我们的思维模式。掌握了数据结构与算法,我们看待问题的深度、解决问题的角度会大有不同,对于个人逻辑思维的提升,也是质的飞跃
 ---
 
 

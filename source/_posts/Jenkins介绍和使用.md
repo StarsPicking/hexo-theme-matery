@@ -1,8 +1,8 @@
 ---
-title: Jenkins详解
+title: Jenkins介绍和使用
 author: 张大哥
 top: false
-cover: true
+cover: false
 toc: true
 mathjax: false
 categories: Devops

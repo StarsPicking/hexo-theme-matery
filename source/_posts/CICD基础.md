@@ -2,7 +2,7 @@
 title: CICD基础
 author: 张大哥
 top: false
-cover: true
+cover: false
 toc: true
 mathjax: false
 categories: Devops
