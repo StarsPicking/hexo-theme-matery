@@ -1,0 +1,556 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="istio部署微服务, python,linux,mysql,nginx,CICD,jenkins,docker,devops,redis,微服务"><meta name="description" content="istio部署微服务项目介绍
+该项目由四个微服务构成，这个应用模仿在线书店的一个分类，显示一本书的信息
+页面上会显示一本书的描述，书籍的细节，以及关于这本书的评论
+Bookinfo应用分为四个单独的微服务
+productpage 这个服务会"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="referrer" content="no-referrer-when-downgrade"><title>istio部署微服务 | 张大哥Blog</title><link rel="icon" type="image/png" href="/favicon.png"><style>body{background-image:url(http://pic1.win4000.com/wallpaper/2018-05-31/5b0f853804832.jpg);background-repeat:no-repeat;background-size:100% 100%;background-attachment:fixed}</style><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload='"all"!=media&&(media="all")'><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" type="text/css" href="/css/reward.css"><script src="/libs/jquery/jquery-3.6.0.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="张大哥Blog" type="application/atom+xml"></head><style type="text/css">.uk-alert{margin-bottom:15px;padding:10px;background:#ebf7fd;color:#2d7091;border:1px solid rgba(45,112,145,.3);border-radius:4px;text-shadow:0 1px 0 #fff}.uk-alert-success{background:#e8ece2;color:#659f13;border-left:6px solid rgba(120,199,9);font-weight:600}.uk-alert-warning{background:#fff1f0;color:#493b9c;border-left:6px solid rgb(83,27,184,.3);font-weight:600}.uk-alert-danger{background:#f8f8f6;color:#eb360d;border-left:6px solid#eb360d;font-weight:600}</style><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><span class="logo-span">张大哥Blog</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fa-solid fa-blog" style="zoom:.6"></i> <span>博客</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/categories"><i class="fas fa-bookmark" style="margin-top:-20px;zoom:.6"></i> <span>分类</span></a></li><li><a href="/tags"><i class="fas fa-tags" style="margin-top:-20px;zoom:.6"></i> <span>标签</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/resources" class="waves-effect waves-light"><i class="fa-solid fa-toolbox" style="zoom:.6"></i> <span>资源</span></a></li><li class="hide-on-med-and-down nav-item"><a href="" class="waves-effect waves-light"><i class="fas fa-list" style="zoom:.6"></i> <span>媒体</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/galleries"><i class="fas fa-image" style="margin-top:-20px;zoom:.6"></i> <span>相册</span></a></li><li><a href="/books"><i class="fas fa-book" style="margin-top:-20px;zoom:.6"></i> <span>书籍</span></a></li><li><a href="/musics"><i class="fas fa-music" style="margin-top:-20px;zoom:.6"></i> <span>音乐</span></a></li><li><a href="/movies"><i class="fas fa-film" style="margin-top:-20px;zoom:.6"></i> <span>电影</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li><li><a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式"><i id="sum-moon-icon" class="fas fa-sun" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">张大哥Blog</div><div class="logo-desc">技术领域的创作者</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fa-solid fa-blog"></i> 博客 <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/categories" style="margin-left:75px"><i class="fa fas fa-bookmark" style="position:absolute;left:50px"></i> <span>分类</span></a></li><li><a href="/tags" style="margin-left:75px"><i class="fa fas fa-tags" style="position:absolute;left:50px"></i> <span>标签</span></a></li></ul></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/resources" class="waves-effect waves-light"><i class="fa-fw fa-solid fa-toolbox"></i> 资源</a></li><li class="m-nav-item"><a href="javascript:;"><i class="fa-fw fas fa-list"></i> 媒体 <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/galleries" style="margin-left:75px"><i class="fa fas fa-image" style="position:absolute;left:50px"></i> <span>相册</span></a></li><li><a href="/books" style="margin-left:75px"><i class="fa fas fa-book" style="position:absolute;left:50px"></i> <span>书籍</span></a></li><li><a href="/musics" style="margin-left:75px"><i class="fa fas fa-music" style="position:absolute;left:50px"></i> <span>音乐</span></a></li><li><a href="/movies" style="margin-left:75px"><i class="fa fas fa-film" style="position:absolute;left:50px"></i> <span>电影</span></a></li></ul></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://gitee.com/better_better/hexo-theme-matery" class="waves-effect waves-light" target="_blank"><i class="fab fa-github-square fa-fw"></i>Fork Me</a></li></ul></div></div><style>.nav-transparent .github-corner{display:none!important}.github-corner{position:absolute;z-index:10;top:0;right:0;border:0;transform:scale(1.1)}.github-corner svg{color:#0f9d58;fill:#fff;height:64px;width:64px}.github-corner:hover .octo-arm{animation:a .56s ease-in-out}.github-corner .octo-arm{animation:none}@keyframes a{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}</style><a href="https://gitee.com/better_better/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script></script><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/13.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">istio部署微服务</h1></div></div></div></div></div><main class="post-container content"><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/istio/"><span class="chip bg-color">istio</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">微服务</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="fa-solid fa-user-pen"></i>文章作者:&nbsp;&nbsp; 张大哥</div><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2022-11-12</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp; 2023-06-10</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 3.2k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h1 id="istio部署微服务"><a href="#istio部署微服务" class="headerlink" title="istio部署微服务"></a>istio部署微服务</h1><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><ul><li>该项目由四个微服务构成，这个应用模仿在线书店的一个分类，显示一本书的信息</li><li>页面上会显示一本书的描述，书籍的细节，以及关于这本书的评论</li><li>Bookinfo应用分为四个单独的微服务<ul><li>productpage 这个服务会调用detail和reviews两个微服务，用来生成页面</li><li>detail这个微服务中包含了书籍的信息</li><li>reviews这个微服务包含了书籍相关的评论，他还会调用ratings微服务</li><li>ratings这个微服务包含了由书籍组成的评级信息</li></ul></li><li>reviews这个微服务有三个版本<ul><li>v1版本不会调用ratings服务</li><li>v2版本调用ratings服务，并使用1-5个黑色星形来进行评级</li><li>v3版本调用ratings服务，并使用1-5个红色星形来进行评级</li></ul></li></ul><h2 id="注入envoy-sidecar"><a href="#注入envoy-sidecar" class="headerlink" title="注入envoy sidecar"></a>注入envoy sidecar</h2><ol><li><p>架构说明</p><ul><li>要在istio中运行这以应用，无序对自身做出任何改变</li><li>只要简单的在istio环境中对服务进行配置和运行，具体一点就是把envoy sidecar 注入到每个服务中</li><li>所有的微服务都和envoy sidecar集成在一起，被集成服务的所有流量都被envoy sidecar劫持</li><li>这样就为外部控制准备了所需要的hook,然后就可以利用istio控制平面为应用提供服务路由、遥测数据收集以及策略实施功能</li></ul><p><img src="/medias/loading.gif" data-original="/istio%E9%83%A8%E7%BD%B2%E5%BE%AE%E6%9C%8D%E5%8A%A1/1668224234009.png" alt="1668224234009"></p></li><li><p>打标签注入</p><ul><li><p>进入istio目录</p></li><li><p>istio默认自动注入sidecar，需要为default命名空间打上标签istio-injection&#x3D;enable</p></li><li><p>打完标签后，default命名空间的所有pod都会自动注入sidecar代理</p></li><li><pre><code>kubectl label namespace default istio-injection=enabled 
+<pre class="line-numbers language-none"><code class="language-none">
+  
+
+-  使用kubectl部署应用
+
+- 上面的命令会启动全部的四个服务，其中也包括了reviews服务的三个版本（v1, v2,v3）
+
+- &#96;&#96;&#96;sh
+  cd istio-1.10.1 
+  kubectl apply -f samples&#x2F;bookinfo&#x2F;platform&#x2F;kube&#x2F;bookinfo.yaml 
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre></li></ul></li><li><p>istio-init和istio-proxy</p><ul><li><p>这个时候再去看下新的pod信息，已经被自动注入了以下两个容器：istio-proxy、istio-init</p></li><li><p>istio-init</p><ul><li>作用是配置iptables规则，将出入站的流量交给istio-proxy代理</li><li>istio-init 容器会在应用容器启动之前运行，并且执行完成后就退出了，通常用来完成一些初始化任务</li></ul></li><li><p>istio-proxy</p><ul><li><p>真正的sidecar, 基于envoy 实现</p></li><li><p>istio-proxy是如何获取应用容器的入站和出站流量的？答案就在istio-init这个容器的iptable中</p></li><li><p>iptable中会将出入流量重定向到istio-proxy容器对应的端口</p></li><li><pre><code class="sh">-p 15001 表示出站流量被 iptable 重定向到 Envoy 的15001 端口
+-z 15006 表示入站流量被 iptable 重定向到 Envoy 的15006 端口
+-u 1337 用于排除用户ID 为1337 即 istio-proxy 自身的流量
+
+<pre class="line-numbers language-none"><code class="language-none">
+     ![1668224937623](istio部署微服务&#x2F;1668224937623.png)
+
+# 部署服务
+
+
+
+## bookinfo.yaml
+
+&gt; 官方地址：
+&gt;
+&gt; - https:&#x2F;&#x2F;istio.io&#x2F;latest&#x2F;docs&#x2F;examples&#x2F;bookinfo&#x2F;
+&gt; - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;istio&#x2F;istio&#x2F;release-1.15&#x2F;samples&#x2F;bookinfo&#x2F;platform&#x2F;kube&#x2F;bookinfo.yaml
+
+1. detail书籍信息
+
+&#96;&#96;&#96;yaml
+##################################################################################################
+# Details service
+##################################################################################################
+apiVersion: v1
+kind: Service   # Service本质就是一个LB负载均衡器
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: details
+---
+apiVersion: v1
+kind: ServiceAccount  # ServiceAccount给pod里面的进程使用，为pod提供必要的身份认证
+metadata:
+  name: bookinfo-details
+  labels:
+    account: details
+
+---
+apiVersion: apps&#x2F;v1
+kind: Deployment     # Deployment控制器管理Pod对象，滚动更新等
+metadata:
+  name: details-v1   # 控制器的名字是 “details-v1”
+  labels:
+    app: details
+    version: v1
+spec:
+  replicas: 1       # 指定 “details-v1”这个控制器管理的pod是1个
+  selector:
+    matchLabels:   # 给pod指定标签
+      app: details
+      version: v1
+  template:        # 上面控制器创建的pod使用的都是这个模板来定义的
+    metadata:
+      labels:
+        app: details   # 指定创建的pod有那些标签
+        version: v1
+    spec:
+      serviceAccountName: bookinfo-details
+      containers:
+      - name: details  # 指定容器的名字是 details
+        image: docker.io&#x2F;istio&#x2F;examples-bookinfo-details-v1:1.17.0  # 使用镜像版本
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
+---
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre></li></ul></li></ul></li><li><p>ratings书籍评价</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment">##################################################################################################</span>
+<span class="token comment"># Ratings service</span>
+<span class="token comment">##################################################################################################</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ratings
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> ratings
+    <span class="token key atrule">service</span><span class="token punctuation">:</span> ratings
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> http
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> ratings
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>ratings
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">account</span><span class="token punctuation">:</span> ratings
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ratings<span class="token punctuation">-</span>v1
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> ratings
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> ratings
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> ratings
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>ratings
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> ratings
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/istio/examples<span class="token punctuation">-</span>bookinfo<span class="token punctuation">-</span>ratings<span class="token punctuation">-</span>v1<span class="token punctuation">:</span>1.17.0
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+        <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+          <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+<span class="token punctuation">---</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>reviews书籍评论v1,v2, v3</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment">##################################################################################################</span>
+<span class="token comment"># Reviews service</span>
+<span class="token comment">##################################################################################################</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+    <span class="token key atrule">service</span><span class="token punctuation">:</span> reviews
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> http
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>reviews
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">account</span><span class="token punctuation">:</span> reviews
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews<span class="token punctuation">-</span>v1
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>reviews
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/istio/examples<span class="token punctuation">-</span>bookinfo<span class="token punctuation">-</span>reviews<span class="token punctuation">-</span>v1<span class="token punctuation">:</span>1.17.0
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> LOG_DIR
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"/tmp/logs"</span>
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /tmp
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /opt/ibm/wlp/output
+        <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+          <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews<span class="token punctuation">-</span>v2
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v2
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v2
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v2
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>reviews
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/istio/examples<span class="token punctuation">-</span>bookinfo<span class="token punctuation">-</span>reviews<span class="token punctuation">-</span>v2<span class="token punctuation">:</span>1.17.0
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> LOG_DIR
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"/tmp/logs"</span>
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /tmp
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /opt/ibm/wlp/output
+        <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+          <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews<span class="token punctuation">-</span>v3
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v3
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v3
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v3
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>reviews
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> reviews
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/istio/examples<span class="token punctuation">-</span>bookinfo<span class="token punctuation">-</span>reviews<span class="token punctuation">-</span>v3<span class="token punctuation">:</span>1.17.0
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> LOG_DIR
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"/tmp/logs"</span>
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /tmp
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /opt/ibm/wlp/output
+        <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+          <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> wlp<span class="token punctuation">-</span>output
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">---</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>productpage前端页面</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment">##################################################################################################</span>
+<span class="token comment"># Productpage services</span>
+<span class="token comment">##################################################################################################</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> productpage
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> productpage
+    <span class="token key atrule">service</span><span class="token punctuation">:</span> productpage
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> http
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> productpage
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>productpage
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">account</span><span class="token punctuation">:</span> productpage
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> productpage<span class="token punctuation">-</span>v1
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> productpage
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> productpage
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> productpage
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v1
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> bookinfo<span class="token punctuation">-</span>productpage
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> productpage
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/istio/examples<span class="token punctuation">-</span>bookinfo<span class="token punctuation">-</span>productpage<span class="token punctuation">-</span>v1<span class="token punctuation">:</span>1.17.0
+        <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9080</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /tmp
+        <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+          <span class="token key atrule">runAsUser</span><span class="token punctuation">:</span> <span class="token number">1000</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> tmp
+        <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">---</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol><h2 id="bookinfo-gateway-yaml"><a href="#bookinfo-gateway-yaml" class="headerlink" title="bookinfo-gateway.yaml"></a>bookinfo-gateway.yaml</h2><ul><li><p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/istio/istio/release-1.15/samples/bookinfo/networking/bookinfo-gateway.yaml">https://raw.githubusercontent.com/istio/istio/release-1.15/samples/bookinfo/networking/bookinfo-gateway.yaml</a></p></li><li><p>网关接受到请求后会按照路由配置转发到VirtualService虚拟服务</p></li><li><pre><code>$ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+<pre class="line-numbers language-none"><code class="language-none">
+- &#96;&#96;&#96;
+  apiVersion: networking.istio.io&#x2F;v1alpha3
+  kind: Gateway  # istio的网关资源
+  metadata:
+    name: bookinfo-gateway  # 网关名字(这个资源是 ingressgateway)
+  spec:
+    selector:
+      istio: ingressgateway  # 使用istio默认控制器(将ingressgateway关联到istio-ingressgateway全局网关)
+                             # 外网是通过 istio-ingressgateway 网关来代理流量给 ingressgateway 的
+    servers:
+    - port:
+        number: 80  # 网关监听端口
+        name: http
+        protocol: HTTP
+      hosts:
+      - &quot;*&quot;
+  ---
+  apiVersion: networking.istio.io&#x2F;v1alpha3
+  kind: VirtualService  # VirtualService虚拟服务
+  metadata:
+    name: bookinfo
+  spec:
+    hosts:
+    - &quot;*&quot;
+    gateways:
+    - bookinfo-gateway  # 将虚拟服务绑定到istio bookinfo-gateway这个网关
+    http:
+    - match:  # 定义匹配规则，访问这些url就会转发到 productpage服务
+      - uri:
+          exact: &#x2F;productpage
+      - uri:
+          prefix: &#x2F;static
+      - uri:
+          exact: &#x2F;login
+      - uri:
+          exact: &#x2F;logout
+      - uri:
+          prefix: &#x2F;api&#x2F;v1&#x2F;products
+      route:
+      - destination:
+          host: productpage  # productpage是服务名字 默认后缀是 .default.svc.cluster.local
+          port:
+            number: 9080
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre></li><li><p>配置ingressgateway网关</p></li><li><pre><code>kubectl edit svc istio- ingressgateway-n istio-system
+
+<pre class="line-numbers language-none"><code class="language-none">
+- ![1668225417686](istio部署微服务&#x2F;1668225417686.png)
+
+- 此时使用http:&#x2F;&#x2F;本机地址&#x2F;productionpage 访问页面
+
+## istio核心资源
+
+## gateway
+
+- 在kubernetes环境中，ingress control用于管理进入集群的流量
+- 在istio服务网格中，istio ingress gateway承担响应的角色
+- 他使用新的配置模型（gateway 和virtualservice）完成流量管理功能
+-  &#96;网关配置应用于在网格边缘运行的独立 Envoy 代理&#96;，&#96;而不是与服务工作负载一起运行的 Sidecar Envoy 代理&#96; 
+
+- 所以我们配置的 gateway资源指的是 下图中的 ② istio-ingressgateway
+
+
+
+### 访问流程
+
+1. 用户向某端口发出请求
+2. 负载均衡器监听端口，并将请求转发到集群的某个节点上
+   1. istio ingress gateway service 会监听集群节点端口请求
+3. istio ingress gate service将请求交给 istio ingres gateway pod请求
+   - ingress gateway pod 通过gateway和virtualservice配置规则处理请求
+   - 其中， gateway用来配置端口，协议和证书；virtualservice用来配置一些路由信息（找到请求对应处理服务app service）
+4. istio ingress gateway pod 将请求转给app service
+5. 最终的请求会交给app servie关联的app deployment处理
+
+![1668226196017](istio部署微服务&#x2F;1668226196017.png)
+
+## gateway.yaml
+
+-  网关是一个运行在网格边缘的负载均衡器，用于接收传入或传出的 HTTP&#x2F;TCP 连接 
+
+-  主要工作是接受外部请求，把请求转发到内部服务 
+
+- 网格边缘的 Ingress 流量，会通过对应的 Istio IngressGateway Controller 进入到集群内部。
+
+- 在上面这个 yaml 里我们配置了一个监听 80 端口的入口网关，它会将 80 端口的 http 流量导入到集群内对应的 Virtual Service 上。
+
+- **istio gateway告诉k8s istio-ingressgateway可以打开哪些端口**
+
+- &#96;&#96;&#96;yaml
+  apiVersion: networking.istio.io&#x2F;v1beta1
+  kind: Gateway
+  metadata:
+    name: canary-gateway
+  spec:
+    selector:
+      istio: ingressgateway
+    servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+      - &quot;*&quot;    # *表示通配符，通过任何域名都可以访问<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre></li></ul><h2 id="VirtualService"><a href="#VirtualService" class="headerlink" title="VirtualService"></a>VirtualService</h2><ul><li>VirtualService 是 Istio 流量治理的一个核心配置，可以说是 Istio 流量治理中最重要、最复杂的。</li><li>VirtualService 在形式上表示一个虚拟服务，将满足条件的流量都转发到对应的服务后端</li><li>这个服务后端可以是一个服务，也可以是在 DestinationRule 中定义的服务的子集。</li></ul><ol><li><h4 id="virtual-yaml"><a href="#virtual-yaml" class="headerlink" title="virtual.yaml"></a>virtual.yaml</h4><ul><li><p>这个虚拟服务会收到上一个 gateway 中所有 80 端口来的 http 流量</p></li><li><pre><code class="yaml">apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: canary
+spec:
+  hosts:
+  - &quot;*&quot;  # *表示通配符，任何域名都可以，也可以配置具体域名 eg: www.example.com
+         # 1）hosts：虚拟主机名称，它是客户端向服务发送请求时使用的一个或多个地址
+         # 通过该字段提供的地址访问 virtual service，进而访问后端服务
+         # 在集群内部(网格内)使用时通常与 kubernetes 的 Service 同名
+         # 当需要在集群外部(网格外)访问时，该字段为 gateway 请求的地址，即与 gateway 的 hosts 字段相同
+  gateways:
+  - canary-gateway
+  http:
+  - route:
+    - destination:
+        host: canary.default.svc.cluster.local
+        subset: v1
+      weight: 90
+    - destination:
+        host: canary.default.svc.cluster.local
+        subset: v2
+      weight: 10
+
+<pre class="line-numbers language-none"><code class="language-none">
+   - 
+
+2. headers匹配
+
+   &#96;&#96;&#96;yaml
+   apiVersion: networking.istio.io&#x2F;v1alpha3
+   kind: VirtualService
+   metadata:
+     name: reviews
+   spec:
+     hosts:
+     - reviews
+     http:
+     - match:
+       - headers:
+             end-user:  # 此路由接收来自 ”jason“ 用户的所有请求，把请求发送到 destination 指定的 v2 子集
+               exact: jason
+       route:
+       - destination:
+           host: reviews
+           subset: v2
+     - route:
+       - destination:  # 不满足第一个路由规则的流量均流向一个默认的目标，第二条规则没有 match 条件，直接将流量导向 v3 子集
+           host: reviews
+           subset: v3
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre></li></ul></li><li><p>多路由规则</p><pre class="line-numbers language-none"><code class="language-none">路由规则是将特定流量子集路由到指定目标地址的工具。
+可以在流量端口、header 字段、URI 等内容上设置匹配条件。
+例如，下面这个虚拟服务让用户发送请求到两个独立的服务：ratings 和 reviews，
+http:&#x2F;&#x2F;bookinfo.com&#x2F;ratings 请求转发到 ratings 服务
+http:&#x2F;&#x2F;bookinfo.com&#x2F;reviews 请求转发到 reviews 服务
+虚拟服务规则根据请求的 URI 把请求路由到特定的目标地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">kind</span><span class="token punctuation">:</span> VirtualService
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> bookinfo
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bookinfo.com
+         <span class="token comment"># 1）hosts：虚拟主机名称，它是客户端向服务发送请求时使用的一个或多个地址</span>
+         <span class="token comment"># 通过该字段提供的地址访问 virtual service，进而访问后端服务</span>
+         <span class="token comment"># 在集群内部(网格内)使用时通常与 kubernetes 的 Service 同名</span>
+         <span class="token comment"># 当需要在集群外部(网格外)访问时，该字段为 gateway 请求的地址，即与 gateway 的 hosts 字段相同</span>
+  <span class="token key atrule">http</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">match</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">uri</span><span class="token punctuation">:</span> 
+        <span class="token key atrule">prefix</span><span class="token punctuation">:</span> /reviews
+    <span class="token key atrule">route</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">destination</span><span class="token punctuation">:</span>
+        <span class="token key atrule">host</span><span class="token punctuation">:</span> reviews  <span class="token comment"># 路由的 destination 字段指定了匹配条件的流量的实际地址</span>
+                       <span class="token comment"># 与 virtual service 的主机不同，该host 必须是存在于 istio 的服务注册表</span>
+                       <span class="token comment"># (如 kubernetes services，consul services 等)中的真实目的地或由 ServiceEntries 声明的 hosts</span>
+                       <span class="token comment"># 否则 Envoy 不知道应该将流量发送到哪里</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">match</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">uri</span><span class="token punctuation">:</span>
+        <span class="token key atrule">prefix</span><span class="token punctuation">:</span> /ratings
+    <span class="token key atrule">route</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">destination</span><span class="token punctuation">:</span>
+        <span class="token key atrule">host</span><span class="token punctuation">:</span> ratings
+        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h3 id="DestinationRule-yaml"><a href="#DestinationRule-yaml" class="headerlink" title="DestinationRule.yaml"></a>DestinationRule.yaml</h3><ul><li>destination rule 是 istio 流量路由功能的重要组成部分。</li><li>一个 virtual service 可以看作是如何将流量分发给特定的目的地，然后调用 destination rule 来配置分发到该目的地的流量。</li><li>destination rule 在 virtual service 的路由规则之后起作用，应用于真实的目的地。<ul><li>(即在 virtual service 的 math-&gt;route-destination 之后起作用，此时流量已经分发到真实的 service 上)</li></ul></li><li>可以使用 destination rule 来指定命名的服务子集，例如根据版本对服务的实例进行分组</li><li>然后通过 virtual service 的路由规则中的服务子集将控制流量分发到不同服务的实例中</li></ul><pre class="line-numbers language-none"><code class="language-none">apiVersion: networking.istio.io&#x2F;v1beta1 
+kind: DestinationRule 
+metadata: 
+  name: canary 
+spec: 
+  host: canary.default.svc.cluster.local 
+  subsets: 
+  - name: v1 
+    labels: 
+      app: v1 
+  - name: v2 
+    labels: 
+      app: v2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者: </i></span><span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">张大哥</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接: </i></span><span class="reprint-info"><a href="http://zhangtq.tpddns.cn/posts/22626.html">http://zhangtq.tpddns.cn/posts/22626.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明: </i></span><span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">张大哥</a> !</span></div></div><script async defer>function navToReprintStatement(){$("html, body").animate({scrollTop:$("#reprint-statement").offset().top-80},800)}document.addEventListener("copy",function(t){M.toast({html:'<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>'})})</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/istio/"><span class="chip bg-color">istio</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i>&nbsp;上一篇</div><div class="card"><a href="/posts/51490.html"><div class="card-image"><img src="/medias/loading.gif" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="istio实现金丝雀发布"> <span class="card-title">istio实现金丝雀发布</span></div></a><div class="card-content article-content"><div class="summary block-with-text">1 istio实现灰度发布1.1 什么是灰度发布 灰度发布也叫金丝雀部署 ，是指通过控制流量的比例，实现新老版本的逐步更替。比如对于服务 A</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2022-11-12 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">微服务</a></span></div></div><div class="card-action article-tags"><a href="/tags/istio/"><span class="chip bg-color">istio</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/19213.html"><div class="card-image"><img src="/medias/loading.gif" data-original="https://zhangtq-blog.oss-cn-hangzhou.aliyuncs.com/theme/cover2.jpg" class="responsive-img" alt="微服务架构"> <span class="card-title">微服务架构</span></div></a><div class="card-content article-content"><div class="summary block-with-text"></div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2022-11-02 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">微服务</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="chip bg-color">微服务</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/prism/prism.min.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color:#fff"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function(){tocbot.init({tocSelector:"#toc-content",contentSelector:"#articleContent",headingsOffset:-(.4*$(window).height()-45),collapseDepth:Number("3"),headingSelector:"h1, h2, h3, h4"});let t=parseInt(.4*$(window).height()-64),e=$(".toc-widget");$(window).scroll(function(){$(window).scrollTop()>t?e.addClass("toc-fixed"):e.removeClass("toc-fixed")});const n="expanded";let i=$("#toc-aside"),l=$("#main-content");$("#floating-toc-btn .btn-floating").click(function(){i.hasClass(n)?(i.removeClass(n).hide(),l.removeClass("l9")):(i.addClass(n).show(),l.addClass("l9"));var e="artDetail",o="prenext-posts";if(0!==(e=$("#"+e)).length){let t=e.width();450<=t?t+=21:350<=t&&t<450?t+=18:300<=t&&t<350?t+=16:t+=14,$("#"+o).width(t)}})})</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{display:none;font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{display:none;font-size:15px;color:#42b983}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="7548962547" fixed="true" autoplay theme="#42b983" loop order="random" preload="auto" volume="0.7" list-folded="true"></meting-js></div></div><script src="/libs/aplayer/APlayer.min.js"></script><script src="/libs/aplayer/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:15px!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019-2023</span> <a href="/about" target="_blank">张大哥</a> |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a><br><span id="sitetime">Loading ...</span> <span class="my-face">ღゝ◡╹)ノ♡</span><script language="javascript">function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,o=new Date,i=o.getFullYear(),a=o.getMonth()+1,n=o.getDate(),r=o.getHours(),l=o.getMinutes(),o=o.getSeconds(),s=Date.UTC(2017,9,11,0,0,0),i=Date.UTC(i,a,n,r,l,o)-s,a=Math.floor(i/31536e6),n=Math.floor(i/t-365*a),r=Math.floor((i-(365*a+n)*t)/e),l=Math.floor((i-(365*a+n)*t-r*e)/6e4),o=Math.floor((i-(365*a+n)*t-r*e-6e4*l)/1e3);document.getElementById("sitetime").innerHTML="本站已运行 "+a+" 年 "+n+" 天 "+r+" 小时 "+l+" 分钟 "+o+" 秒"}siteTime()</script><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">145.7k</span> <span id="busuanzi_container_site_pv">&nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp; <span id="busuanzi_value_site_pv" class="white-color"></span> </span><span id="busuanzi_container_site_pv" style="display:none"><i class="fa fa-heart-o"></i> 本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span> </span><span id="busuanzi_container_site_uv" style="display:none">人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.</span><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://gitee.com/better_better" class="tooltipped" target="_blank" data-tooltip="访问我的Git" data-position="top" data-delay="50"><i class="fa-brands fa-gitlab"></i> </a><a href="mailto:15652533044@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1028354023" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1028354023" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>$(document).ready(function(){var e=setInterval(function(){"none"!=document.getElementById("busuanzi_container_site_pv").style.display&&($("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+n),clearInterval(e));"none"!=$("#busuanzi_container_site_pv").css("display")&&($("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html())+t),clearInterval(e))},50),n=8e4,t=2e4})</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">$(function(){!function(t,r,s){"use strict";$.ajax({url:t,dataType:"xml",success:function(t){var e=$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),t=document.getElementById(r),n=document.getElementById(s);t.addEventListener("input",function(){var o='<ul class="search-result-list">',h=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(t){var n,e,r,s=!0,i=t.title.trim().toLowerCase(),l=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),a=0===(a=t.url).indexOf("/")?t.url:"/"+a,c=-1,u=-1;""!==i&&""!==l&&h.forEach(function(t,e){n=i.indexOf(t),c=l.indexOf(t),n<0&&c<0?s=!1:(c<0&&(c=0),0===e&&(u=c))}),s&&(o+="<li><a href='"+a+"' class='search-result-title'>"+i+"</a>",a=t.content.trim().replace(/<[^>]+>/g,""),0<=u&&(t=u+80,(t=0===(e=(e=u-20)<0?0:e)?100:t)>a.length&&(t=a.length),r=a.substr(e,t),h.forEach(function(t){var e=new RegExp(t,"gi");r=r.replace(e,'<em class="search-keyword">'+t+"</em>")}),o+='<p class="search-result">'+r+"...</p>"),o+="</li>")}),o+="</ul>",n.innerHTML=o)})}})}("/search.xml","searchInput","searchResult")})</script><div class="stars-con"><div id="stars"></div><div id="stars2"></div><div id="stars3"></div></div><script>function switchNightMode(){$('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($("body")),setTimeout(function(){$("body").hasClass("DarkMode")?($("body").removeClass("DarkMode"),localStorage.setItem("isDark","0"),$("#sum-moon-icon").removeClass("fa-sun").addClass("fa-moon")):($("body").addClass("DarkMode"),localStorage.setItem("isDark","1"),$("#sum-moon-icon").addClass("fa-sun").removeClass("fa-moon")),setTimeout(function(){$(".Cuteen_DarkSky").fadeOut(1e3,function(){$(this).remove()})},2e3)})}</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script type="text/javascript">var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>')</script><script src="https://ssl.captcha.qq.com/TCaptcha.js"></script><script src="/libs/others/TencentCaptcha.js"></script><button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0],e=(t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js",document.getElementsByTagName("script")[0]);e.parentNode.insertBefore(t,e)}()</script><script src="/libs/others/clicklove.js" async></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript" color="0,0,255" pointcolor="0,0,255" opacity="0.7" zindex="-1" count="99" src="/libs/background/canvas-nest.js"></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script><style>[bg-lazy]{background-image:none!important;background-color:#eee!important}</style><script>window.imageLazyLoadSetting={isSPA:!1,preloadRatio:4,processImages:null}</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})})</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a=c[o],i=function(){c=c.filter(function(t){return a!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(a)};(t=a).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),i()):(e=new Image,n=t.getAttribute("data-original"),e.onload=function(){t.src=n,t.removeAttribute("data-original"),i()},t.src!==n&&(e.src=n))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this)</script></body></html>
