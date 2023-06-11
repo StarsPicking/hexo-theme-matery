@@ -8,29 +8,16 @@ Software architecture description
 
 #### Installation
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  git clone https://gitee.com/better_better/zhangtq-blog.git
 
 #### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.安装git
+2.下载项目
+3.下载安装Node.js  
+4.更改npm镜像源为淘宝源`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+5.cnpm install -g hexo-cli
+6.进入博客目录 cd zhangtq-blog
+7.cnpm install --force
+8.npm install hexo-deployer-git --save
+9.修改仓库名称
+10.执行hexo d推送
