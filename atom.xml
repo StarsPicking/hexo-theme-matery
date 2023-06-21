@@ -6,7 +6,7 @@
   <link href="http://zhangtq.tpddns.cn/atom.xml" rel="self"/>
   
   <link href="http://zhangtq.tpddns.cn/"/>
-  <updated>2023-06-19T09:13:34.746Z</updated>
+  <updated>2023-06-21T09:52:58.006Z</updated>
   <id>http://zhangtq.tpddns.cn/</id>
   
   <author>
@@ -17,24 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python 面试题</title>
+    <title>python知识点总结</title>
     <link href="http://zhangtq.tpddns.cn/posts/14053.html"/>
     <id>http://zhangtq.tpddns.cn/posts/14053.html</id>
     <published>2023-06-19T06:57:43.000Z</published>
-    <updated>2023-06-19T09:13:34.746Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;python面试题&quot;&gt;&lt;a href=&quot;#python面试题&quot; class=&quot;headerlink&quot; title=&quot;python面试题&quot;&gt;&lt;/a&gt;python面试题&lt;/h1&gt;&lt;h2 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <updated>2023-06-21T09:52:58.006Z</updated>
     
     
     
-    <category term="面试" scheme="http://zhangtq.tpddns.cn/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="python" scheme="http://zhangtq.tpddns.cn/categories/python/"/>
     
     
     <category term="面试" scheme="http://zhangtq.tpddns.cn/tags/%E9%9D%A2%E8%AF%95/"/>
