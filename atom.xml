@@ -6,7 +6,7 @@
   <link href="http://zhangtq.tpddns.cn/atom.xml" rel="self"/>
   
   <link href="http://zhangtq.tpddns.cn/"/>
-  <updated>2023-06-25T07:47:12.902Z</updated>
+  <updated>2023-06-26T01:52:51.981Z</updated>
   <id>http://zhangtq.tpddns.cn/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Celery</title>
+    <link href="http://zhangtq.tpddns.cn/posts/63146.html"/>
+    <id>http://zhangtq.tpddns.cn/posts/63146.html</id>
+    <published>2023-06-25T14:40:29.000Z</published>
+    <updated>2023-06-26T01:52:51.981Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;celery组件与原理&quot;&gt;&lt;a href=&quot;#celery组件与原理&quot; class=&quot;headerlink&quot; title=&quot;celery组件与原理&quot;&gt;&lt;/a&gt;celery组件与原理&lt;/h1&gt;&lt;h2 id=&quot;celery原理与组件&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="http://zhangtq.tpddns.cn/categories/python/"/>
+    
+    
+    <category term="celery" scheme="http://zhangtq.tpddns.cn/tags/celery/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django</title>
     <link href="http://zhangtq.tpddns.cn/posts/28675.html"/>
     <id>http://zhangtq.tpddns.cn/posts/28675.html</id>
     <published>2023-06-25T03:04:41.000Z</published>
-    <updated>2023-06-25T07:47:12.902Z</updated>
+    <updated>2023-06-25T14:38:09.764Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="http://zhangtq.tpddns.cn/posts/58477.html"/>
     <id>http://zhangtq.tpddns.cn/posts/58477.html</id>
     <published>2023-06-24T14:36:24.000Z</published>
-    <updated>2023-06-24T15:15:06.383Z</updated>
+    <updated>2023-06-25T07:47:39.029Z</updated>
     
     
       
@@ -493,31 +518,6 @@
         
         
     <summary type="html">&lt;h4 id=&quot;groovy数据类型-list&quot;&gt;&lt;a href=&quot;#groovy数据类型-list&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="groovy" scheme="http://zhangtq.tpddns.cn/categories/groovy/"/>
-    
-    
-    <category term="groovy" scheme="http://zhangtq.tpddns.cn/tags/groovy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>groovy数据类型-string</title>
-    <link href="http://zhangtq.tpddns.cn/posts/50895.html"/>
-    <id>http://zhangtq.tpddns.cn/posts/50895.html</id>
-    <published>2022-10-28T15:53:39.000Z</published>
-    <updated>2023-06-10T15:04:43.090Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;groovy数据类型-String&quot;&gt;&lt;a href=&quot;#groovy数据类型-String&quot; class=&quot;headerlink&quot;</summary>
         
       
     
