@@ -6,7 +6,7 @@
   <link href="http://zhangtq.tpddns.cn/atom.xml" rel="self"/>
   
   <link href="http://zhangtq.tpddns.cn/"/>
-  <updated>2023-06-26T01:52:51.981Z</updated>
+  <updated>2023-06-28T10:05:33.829Z</updated>
   <id>http://zhangtq.tpddns.cn/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="http://zhangtq.tpddns.cn/pages/"/>
+    <id>http://zhangtq.tpddns.cn/pages/</id>
+    <published>2023-06-28T10:03:06.000Z</published>
+    <updated>2023-06-28T10:05:33.829Z</updated>
+    
+    
+    
+    
+    <category term="测试" scheme="http://zhangtq.tpddns.cn/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Celery</title>
@@ -495,31 +510,6 @@
     <summary type="html">&lt;h4 id=&quot;groovy-函数&quot;&gt;&lt;a href=&quot;#groovy-函数&quot; class=&quot;headerlink&quot; title=&quot;groovy 函数&quot;&gt;&lt;/a&gt;groovy 函数&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;def 定义函数&lt;/li&gt;
 &lt;li&gt;语法&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="groovy" scheme="http://zhangtq.tpddns.cn/categories/groovy/"/>
-    
-    
-    <category term="groovy" scheme="http://zhangtq.tpddns.cn/tags/groovy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>groovy数据类型-list</title>
-    <link href="http://zhangtq.tpddns.cn/posts/42286.html"/>
-    <id>http://zhangtq.tpddns.cn/posts/42286.html</id>
-    <published>2022-10-28T15:53:55.000Z</published>
-    <updated>2023-06-10T15:04:43.090Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;groovy数据类型-list&quot;&gt;&lt;a href=&quot;#groovy数据类型-list&quot; class=&quot;headerlink&quot;</summary>
         
       
     

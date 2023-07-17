@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>测试</title>
+      <link href="//pages//"/>
+      <url>//pages//</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Celery</title>
       <link href="/posts/63146.html"/>
       <url>/posts/63146.html</url>
@@ -1342,7 +1361,7 @@
     
     
     <entry>
-      <title>Nexus制品上传-jenkins</title>
+      <title>Nexus制品上传jenkins</title>
       <link href="/posts/58658.html"/>
       <url>/posts/58658.html</url>
       
