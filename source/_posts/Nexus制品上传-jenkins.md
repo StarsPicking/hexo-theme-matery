@@ -1,5 +1,5 @@
 ---
-title: Nexus制品上传-jenkins
+title: Nexus制品上传jenkins
 author: 张大哥
 top: false
 cover: false

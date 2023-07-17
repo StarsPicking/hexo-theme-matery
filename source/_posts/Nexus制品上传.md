@@ -1,6 +1,8 @@
 ---
-tle: Nexus制品上传-jenkins
-author: 张大哥
+title: Nexus制品上传-jenkins
+author: 
+  name: 张大哥
+  link: https://gitee.com/better_better
 top: false
 cover: false
 toc: true
