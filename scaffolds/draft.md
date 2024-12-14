@@ -1,7 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-author: 张大哥
+author: 
+  name: zhangtq
+  link: https://www.cnblogs.com/zhangtq
 img: 
 top: false
 cover: false
@@ -9,7 +11,8 @@ coverImg:
 toc: true
 mathjax: false
 summary: 
-categories: 你的分类
+categories: {{title}}
 tags:
-  - 你的标签
+  - 
+permalink: /pages/{{abbrlink}}/
 ---

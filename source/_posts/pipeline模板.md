@@ -19,16 +19,19 @@ summary:
 
 
 
+# pipeline简单的流程模板
 
-## pipeline简单的流程模板
 
-本实例通过流水线的方式，在jenkisn里配置全局变量（npm, ant, maven, gradle）,通过项目里配置参数buildShell来控制实际的构建工具，实现用户可以选择构建工具来打包的功能
 
-项目准备：
+- 本实例通过流水线的方式，在jenkisn里配置全局变量（npm, ant, maven, gradle）,通过项目里配置参数buildShell来控制实际的构建工具，实现用户可以选择构建工具来打包的功能
 
-1. 安装 npm ant maven gradle
-2. 配置项目参数
-3. 配置系统管理----> 全局变量配置
+- 项目准备：
+
+  1. 安装 npm ant maven gradle
+  1. 配置项目参数
+  1. 配置系统管理----> 全局变量配置
+
+  
 
 ```
 #!groovy
