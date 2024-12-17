@@ -168,14 +168,14 @@ indexbtn:
   enable: true
   name: Gitee
   icon: fa-brands fa-gitlab
-  url: https://gitee.com/better_better
+  url: https://gitee.com/zhangtqup
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
   github: 
-  git: https://gitee.com/better_better
+  git: https://gitee.com/zhangtqup/
   email: 15652533044@163.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
@@ -423,7 +423,7 @@ changyan:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://gitee.com/better_better/hexo-theme-matery
+  url: https://gitee.com/zhangtqup/zhangtq-blog
   title: Fork Me
 
 # The configuration of the Twikoo comment module is not activated by default.
