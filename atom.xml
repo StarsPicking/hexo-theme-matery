@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>张大哥Blog</title>
+  
+  <subtitle>张大哥Blog</subtitle>
+  <link href="https://blog.zhangtq.com/atom.xml" rel="self"/>
+  
+  <link href="https://blog.zhangtq.com/"/>
+  <updated>2023-06-28T10:05:33.829Z</updated>
+  <id>https://blog.zhangtq.com/</id>
+  
+  <author>
+    <name>张大哥</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="https://blog.zhangtq.com/pages/"/>
+    <id>https://blog.zhangtq.com/pages/</id>
+    <published>2023-06-28T10:03:06.000Z</published>
+    <updated>2023-06-28T10:05:33.829Z</updated>
+    
+    
+    
+    
+    <category term="测试" scheme="https://blog.zhangtq.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Celery</title>
+    <link href="https://blog.zhangtq.com/posts/63146.html"/>
+    <id>https://blog.zhangtq.com/posts/63146.html</id>
+    <published>2023-06-25T14:40:29.000Z</published>
+    <updated>2023-06-26T01:52:51.981Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;celery组件与原理&quot;&gt;&lt;a href=&quot;#celery组件与原理&quot; class=&quot;headerlink&quot; title=&quot;celery组件与原理&quot;&gt;&lt;/a&gt;celery组件与原理&lt;/h1&gt;&lt;h2 id=&quot;celery原理与组件&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://blog.zhangtq.com/categories/python/"/>
+    
+    
+    <category term="celery" scheme="https://blog.zhangtq.com/tags/celery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django</title>
+    <link href="https://blog.zhangtq.com/posts/28675.html"/>
+    <id>https://blog.zhangtq.com/posts/28675.html</id>
+    <published>2023-06-25T03:04:41.000Z</published>
+    <updated>2023-06-25T14:38:09.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;django&quot;&gt;&lt;a href=&quot;#django&quot; class=&quot;headerlink&quot; title=&quot;django&quot;&gt;&lt;/a&gt;django&lt;/h1&gt;&lt;h2 id=&quot;web服务器&quot;&gt;&lt;a href=&quot;#web服务器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="你的分类" scheme="https://blog.zhangtq.com/categories/%E4%BD%A0%E7%9A%84%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="你的标签" scheme="https://blog.zhangtq.com/tags/%E4%BD%A0%E7%9A%84%E6%A0%87%E7%AD%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python模块</title>
+    <link href="https://blog.zhangtq.com/posts/58477.html"/>
+    <id>https://blog.zhangtq.com/posts/58477.html</id>
+    <published>2023-06-24T14:36:24.000Z</published>
+    <updated>2023-06-25T07:47:39.029Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;time&quot;&gt;&lt;a href=&quot;#time&quot; class=&quot;headerlink&quot; title=&quot;time&quot;&gt;&lt;/a&gt;time&lt;/h1&gt;&lt;h2 id=&quot;time模块&quot;&gt;&lt;a href=&quot;#time模块&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://blog.zhangtq.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://blog.zhangtq.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python知识点总结</title>
+    <link href="https://blog.zhangtq.com/posts/14053.html"/>
+    <id>https://blog.zhangtq.com/posts/14053.html</id>
+    <published>2023-06-19T06:57:43.000Z</published>
+    <updated>2023-06-21T11:25:50.159Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;python知识点&quot;&gt;&lt;a href=&quot;#python知识点&quot; class=&quot;headerlink&quot; title=&quot;python知识点&quot;&gt;&lt;/a&gt;python知识点&lt;/h1&gt;&lt;h2 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://blog.zhangtq.com/categories/python/"/>
+    
+    
+    <category term="面试" scheme="https://blog.zhangtq.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单元测试</title>
+    <link href="https://blog.zhangtq.com/posts/24843.html"/>
+    <id>https://blog.zhangtq.com/posts/24843.html</id>
+    <published>2023-06-17T09:01:49.000Z</published>
+    <updated>2023-06-19T07:42:03.068Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Go语言测试&quot;&gt;&lt;a href=&quot;#Go语言测试&quot; class=&quot;headerlink&quot; title=&quot;Go语言测试&quot;&gt;&lt;/a&gt;Go语言测试&lt;/h2&gt;&lt;h3 id=&quot;go-test工具&quot;&gt;&lt;a href=&quot;#go-test工具&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="你的分类" scheme="https://blog.zhangtq.com/categories/%E4%BD%A0%E7%9A%84%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="你的标签" scheme="https://blog.zhangtq.com/tags/%E4%BD%A0%E7%9A%84%E6%A0%87%E7%AD%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-matery魔改</title>
+    <link href="https://blog.zhangtq.com/posts/27595.html"/>
+    <id>https://blog.zhangtq.com/posts/27595.html</id>
+    <published>2022-11-25T17:13:25.000Z</published>
+    <updated>2024-11-05T07:24:21.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;魔改&quot;&gt;&lt;a href=&quot;#魔改&quot; class=&quot;headerlink&quot; title=&quot;魔改&quot;&gt;&lt;/a&gt;魔改&lt;/h1&gt;&lt;h2 id=&quot;修改网站整体配色&quot;&gt;&lt;a href=&quot;#修改网站整体配色&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="https://blog.zhangtq.com/categories/hexo/"/>
+    
+    
+    <category term="hexo-theme-matery" scheme="https://blog.zhangtq.com/tags/hexo-theme-matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode算法题II</title>
+    <link href="https://blog.zhangtq.com/posts/45160.html"/>
+    <id>https://blog.zhangtq.com/posts/45160.html</id>
+    <published>2022-11-24T15:59:21.000Z</published>
+    <updated>2023-06-10T15:04:43.137Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://blog.zhangtq.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法题" scheme="https://blog.zhangtq.com/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    <category term="leetcode" scheme="https://blog.zhangtq.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http协议</title>
+    <link href="https://blog.zhangtq.com/posts/20687.html"/>
+    <id>https://blog.zhangtq.com/posts/20687.html</id>
+    <published>2022-11-15T15:42:11.000Z</published>
+    <updated>2023-07-17T06:13:49.768Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;http必知必会&quot;&gt;&lt;a href=&quot;#http必知必会&quot; class=&quot;headerlink&quot; title=&quot;http必知必会&quot;&gt;&lt;/a&gt;http必知必会&lt;/h1&gt;&lt;h1 id=&quot;http-请求方式&quot;&gt;&lt;a href=&quot;#http-请求方式&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络通信" scheme="https://blog.zhangtq.com/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+    <category term="http协议" scheme="https://blog.zhangtq.com/tags/http%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio微服务</title>
+    <link href="https://blog.zhangtq.com/posts/50921.html"/>
+    <id>https://blog.zhangtq.com/posts/50921.html</id>
+    <published>2022-11-15T15:19:42.000Z</published>
+    <updated>2023-09-13T11:47:12.554Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;istio能做什么&quot;&gt;&lt;a href=&quot;#istio能做什么&quot; class=&quot;headerlink&quot; title=&quot;istio能做什么&quot;&gt;&lt;/a&gt;istio能做什么&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;连接： 智能控制服务之间的调用流量，</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://blog.zhangtq.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="https://blog.zhangtq.com/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio实现金丝雀发布</title>
+    <link href="https://blog.zhangtq.com/posts/51490.html"/>
+    <id>https://blog.zhangtq.com/posts/51490.html</id>
+    <published>2022-11-12T08:23:34.000Z</published>
+    <updated>2023-06-10T15:04:43.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-istio实现灰度发布&quot;&gt;&lt;a href=&quot;#1-istio实现灰度发布&quot; class=&quot;headerlink&quot; title=&quot;1 istio实现灰度发布&quot;&gt;&lt;/a&gt;1 istio实现灰度发布&lt;/h1&gt;&lt;h2 id=&quot;1-1-什么是灰度发布&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://blog.zhangtq.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="https://blog.zhangtq.com/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>istio部署微服务</title>
+    <link href="https://blog.zhangtq.com/posts/22626.html"/>
+    <id>https://blog.zhangtq.com/posts/22626.html</id>
+    <published>2022-11-12T03:24:37.000Z</published>
+    <updated>2023-08-31T13:29:23.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;istio部署微服务&quot;&gt;&lt;a href=&quot;#istio部署微服务&quot; class=&quot;headerlink&quot; title=&quot;istio部署微服务&quot;&gt;&lt;/a&gt;istio部署微服务&lt;/h1&gt;&lt;h2 id=&quot;项目介绍&quot;&gt;&lt;a href=&quot;#项目介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://blog.zhangtq.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="istio" scheme="https://blog.zhangtq.com/tags/istio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微服务架构</title>
+    <link href="https://blog.zhangtq.com/posts/19213.html"/>
+    <id>https://blog.zhangtq.com/posts/19213.html</id>
+    <published>2022-11-02T11:11:07.000Z</published>
+    <updated>2023-06-10T15:04:43.403Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;微服务架构介绍&quot;&gt;&lt;a href=&quot;#微服务架构介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://blog.zhangtq.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="微服务" scheme="https://blog.zhangtq.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="https://blog.zhangtq.com/posts/44296.html"/>
+    <id>https://blog.zhangtq.com/posts/44296.html</id>
+    <published>2022-11-02T09:59:01.000Z</published>
+    <updated>2023-06-19T06:59:43.769Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;reids-基础&quot;&gt;&lt;a href=&quot;#reids-基础&quot; class=&quot;headerlink&quot; title=&quot;reids 基础&quot;&gt;&lt;/a&gt;reids</summary>
+        
+      
+    
+    
+    
+    <category term="redis" scheme="https://blog.zhangtq.com/categories/redis/"/>
+    
+    
+    <category term="redis" scheme="https://blog.zhangtq.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode算法题I</title>
+    <link href="https://blog.zhangtq.com/posts/46634.html"/>
+    <id>https://blog.zhangtq.com/posts/46634.html</id>
+    <published>2022-11-01T16:54:49.000Z</published>
+    <updated>2023-06-28T08:44:28.557Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;p&gt;数据结构算法不仅有用,更应该是每个程序员必须掌握的基本功</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://blog.zhangtq.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法题" scheme="https://blog.zhangtq.com/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    <category term="leetcode" scheme="https://blog.zhangtq.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序算法与二分查找</title>
+    <link href="https://blog.zhangtq.com/posts/17141.html"/>
+    <id>https://blog.zhangtq.com/posts/17141.html</id>
+    <published>2022-11-01T13:08:46.000Z</published>
+    <updated>2023-06-10T15:04:43.403Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;排序算法&quot;&gt;&lt;a href=&quot;#排序算法&quot; class=&quot;headerlink&quot; title=&quot;排序算法&quot;&gt;&lt;/a&gt;排序算法&lt;/h1&gt;&lt;h2 id=&quot;冒泡&quot;&gt;&lt;a href=&quot;#冒泡&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://blog.zhangtq.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构" scheme="https://blog.zhangtq.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="算法" scheme="https://blog.zhangtq.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://blog.zhangtq.com/posts/46563.html"/>
+    <id>https://blog.zhangtq.com/posts/46563.html</id>
+    <published>2022-10-31T15:12:37.000Z</published>
+    <updated>2024-06-29T01:10:15.825Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;正则表达式是匹配类符号&lt;/li&gt;
+&lt;li&gt;正则表达式是一种可以让一些复杂字符串问题变得简单的工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://blog.zhangtq.com/categories/python/"/>
+    
+    
+    <category term="正则表达式" scheme="https://blog.zhangtq.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go基础</title>
+    <link href="https://blog.zhangtq.com/posts/65207.html"/>
+    <id>https://blog.zhangtq.com/posts/65207.html</id>
+    <published>2022-10-29T05:07:40.000Z</published>
+    <updated>2023-06-17T03:38:13.281Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;go语言安装和介绍&quot;&gt;&lt;a href=&quot;#go语言安装和介绍&quot; class=&quot;headerlink&quot; title=&quot;go语言安装和介绍&quot;&gt;&lt;/a&gt;go语言安装和介绍&lt;/h1&gt;&lt;h2 id=&quot;go语言介绍&quot;&gt;&lt;a href=&quot;#go语言介绍&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="https://blog.zhangtq.com/categories/Go/"/>
+    
+    
+    <category term="go基础" scheme="https://blog.zhangtq.com/tags/go%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-正则表达式</title>
+    <link href="https://blog.zhangtq.com/posts/2149.html"/>
+    <id>https://blog.zhangtq.com/posts/2149.html</id>
+    <published>2022-10-28T15:54:23.000Z</published>
+    <updated>2023-06-10T15:04:43.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;groovy-正则表达式&quot;&gt;&lt;a href=&quot;#groovy-正则表达式&quot; class=&quot;headerlink&quot; title=&quot;groovy 正则表达式&quot;&gt;&lt;/a&gt;groovy 正则表达式&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;添加解析器</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="https://blog.zhangtq.com/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="https://blog.zhangtq.com/tags/groovy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>groovy数据类型-函数</title>
+    <link href="https://blog.zhangtq.com/posts/29915.html"/>
+    <id>https://blog.zhangtq.com/posts/29915.html</id>
+    <published>2022-10-28T15:54:04.000Z</published>
+    <updated>2023-06-10T15:04:43.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;groovy-函数&quot;&gt;&lt;a href=&quot;#groovy-函数&quot; class=&quot;headerlink&quot; title=&quot;groovy 函数&quot;&gt;&lt;/a&gt;groovy 函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;def 定义函数&lt;/li&gt;
+&lt;li&gt;语法&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="groovy" scheme="https://blog.zhangtq.com/categories/groovy/"/>
+    
+    
+    <category term="groovy" scheme="https://blog.zhangtq.com/tags/groovy/"/>
+    
+  </entry>
+  
+</feed>
